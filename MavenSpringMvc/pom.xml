@@ -9,6 +9,7 @@
   <url>http://maven.apache.org</url>
   <properties>
 		<spring.version>4.0.1.RELEASE</spring.version>
+		 <hibernate.version>4.0.1.Final</hibernate.version>
 	</properties>
   <dependencies>
     <dependency>
@@ -35,13 +36,52 @@
 			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.sk</groupId>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>MavenSpringMvc</groupId>
 			<artifactId>MavenSpringMvc</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>war</type>
-		</dependency>
+		</dependency> -->
+		<dependency>
+    	<groupId>org.hibernate</groupId>
+    	<artifactId>hibernate-core</artifactId>
+    	<version>${hibernate.version}</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.hibernate.javax.persistence</groupId>
+    	<artifactId>hibernate-jpa-2.0-api</artifactId>
+    	<version>1.0.1.Final</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.hibernate</groupId>
+    	<artifactId>hibernate-entitymanager</artifactId>
+    	<version>${hibernate.version}</version>
+    </dependency>
+
+    <dependency>
+    	<groupId>javax.servlet.jsp.jstl</groupId>
+    	<artifactId>jstl-api</artifactId>
+    	<version>1.2-rev-1</version>
+    </dependency>
   </dependencies>
+  
   <build>
     <finalName>MavenSpringMvc</finalName>
+    <plugins>
+    	<plugin>
+    		<groupId>org.apache.maven.plugins</groupId>
+    		<artifactId>maven-war-plugin</artifactId>
+    		<version>2.6</version>
+    	</plugin>
+    	<plugin>
+    		<groupId>org.apache.npanday.plugins</groupId>
+    		<artifactId>maven-compile-plugin</artifactId>
+    		<version>1.4.0-incubating</version>
+    	</plugin>
+    </plugins>
   </build>
 </project>
