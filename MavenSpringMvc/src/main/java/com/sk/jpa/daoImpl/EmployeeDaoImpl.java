@@ -19,7 +19,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     private EntityManager manager;
 
 	public List<Employee> getAllEmployees() {
-		List<Employee> employees = manager.createQuery("Select a From Employee emp", Employee.class).getResultList();
+		List<Employee> employees = manager.createQuery("Select emp From Employee emp", Employee.class).getResultList();
         return employees;
 	}
 
