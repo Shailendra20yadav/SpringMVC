@@ -1,6 +1,7 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page isELIgnored="false" %>
+ <%@ page isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
 	"http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -10,10 +11,18 @@
 </head>
 <body>
 	<center>
-		<h2>Hello World</h2>
-		<c:forEach items="employees" var ="emp">
-		First Name<h2>${emp.firstName} </h2>
+		<h2>Employee Details</h2>
+		<table border="1">
+		<tr>
+		<td> First Name </td><td>Last Name</td>
+		</tr>
+		<c:forEach items="${employees}" var ="emp">
+		<tr>
+		<td>${emp.firstname} </td><td>${emp.lastname}</td>
+		</tr>
 		</c:forEach>
+		</table>
+		
 		
 	</center>
 </body>
