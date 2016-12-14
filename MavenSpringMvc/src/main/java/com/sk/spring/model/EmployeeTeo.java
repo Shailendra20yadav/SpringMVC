@@ -15,5 +15,15 @@ public class EmployeeTeo {
 	public void setEmpId(long empId) {
 		this.empId = empId;
 	}
+	public EmployeeTeo() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public EmployeeTeo(String empName, long empId) {
+		super();
+		this.empName = empName;
+		this.empId = empId;
+	}
+	
 
 }
