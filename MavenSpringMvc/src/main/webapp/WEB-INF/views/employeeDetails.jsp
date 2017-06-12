@@ -14,14 +14,17 @@
 		<h2>Employee Details</h2>
 		<table border="1">
 		<tr>
-		<td> First Name </td><td>Last Name</td>
+		<td> Employee Number </td><td> First Name </td><td>Last Name</td> <td>Email</td>
 		</tr>
 		<c:forEach items="${employees}" var ="emp">
 		<tr>
-		<td>${emp.firstname} </td><td>${emp.lastname}</td>
+			<td>${emp.empid} </td><td>${emp.firstName} </td><td>${emp.lastName}</td><td>${emp.email}</td>
 		</tr>
 		</c:forEach>
+		
 		</table>
+		
+		<p><a href="home">Home</a> </p>
 		
 		
 	</center>

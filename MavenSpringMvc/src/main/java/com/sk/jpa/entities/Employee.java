@@ -15,7 +15,10 @@ public class Employee implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="EMPLOYEE_ID")
+	@Column(name="EMPLOYEE_ID", updatable = false, nullable = false)
+	@TableGenerator(name="TABLE_GEN", table="SEQUENCE_TABLE", pkColumnName="SEQ_NAME",
+    valueColumnName="SEQ_COUNT", pkColumnValue="EMPLOYEE")
+	@GeneratedValue(strategy=GenerationType.TABLE, generator="TABLE_GEN")
 	private long employeeId;
 
 	@Temporal(TemporalType.DATE)

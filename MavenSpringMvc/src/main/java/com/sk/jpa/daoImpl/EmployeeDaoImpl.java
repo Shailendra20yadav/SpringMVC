@@ -17,7 +17,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	
 	@PersistenceContext
     private EntityManager manager;
-
+	
 	public List<Employee> getAllEmployees() {
 		List<Employee> employees = manager.createQuery("Select emp From Employee emp", Employee.class).getResultList();
         return employees;

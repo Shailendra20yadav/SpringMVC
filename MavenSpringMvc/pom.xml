@@ -10,6 +10,7 @@
   <properties>
 		<spring.version>4.0.1.RELEASE</spring.version>
 		 <hibernate.version>4.0.1.Final</hibernate.version>
+		 <spring-data-jpa.version>1.8.2.RELEASE</spring-data-jpa.version>
 		 <jstl.version>1.2</jstl.version>
 		 <jackson.version>2.2.3</jackson.version>
 		 <log4j.version>1.2.17</log4j.version>
@@ -49,6 +50,11 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		<dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${spring-data-jpa.version}</version>
+        </dependency>
 		<!-- <dependency>
 			<groupId>MavenSpringMvc</groupId>
 			<artifactId>MavenSpringMvc</artifactId>
