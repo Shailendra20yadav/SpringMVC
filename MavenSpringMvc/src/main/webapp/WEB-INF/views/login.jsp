@@ -21,9 +21,14 @@
             <form:form id="loginForm" modelAttribute="emp" action="loginProcess" method="post">
 
                 <table align="center">
+                	<c:if test="${not empty invalidUserMessage}">
+                	<tr><td colspan="2">
+                	${invalidUserMessage}
+                	</td></tr>
+                	</c:if>
 
                     <tr>
-
+						<spring:bind path="userName">
                         <td>
 
                             <form:label path="userName">Username: </form:label>
@@ -33,8 +38,10 @@
                         <td>
 
                             <form:input path="userName" name="userName" id="userName" />
+                            <form:errors path="userName" class="control-label" />
 
                         </td>
+                        </spring:bind>
 
                     </tr>
 
@@ -49,6 +56,7 @@
                         <td>
 
                             <form:password path="password" name="password" id="password" />
+                            <form:errors path="password" class="control-label" />
 
                         </td>
 

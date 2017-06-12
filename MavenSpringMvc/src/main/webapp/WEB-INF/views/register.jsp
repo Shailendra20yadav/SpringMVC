@@ -19,18 +19,19 @@
                 <table align="center">
 
                     <tr>
-
+						<spring:bind path="userName">
                         <td>
 
                             <form:label path="userName">Username</form:label>
-
                         </td>
 
                         <td>
 
                             <form:input path="userName" name="userName" id="userName" />
+                             <form:errors path="userName" class="control-label" />
 
                         </td>
+                        </spring:bind>
 
                     </tr>
 
@@ -45,6 +46,7 @@
                         <td>
 
                             <form:password path="password" name="password" id="password" />
+                             <form:errors path="password" class="control-label" />
 
                         </td>
 
@@ -61,6 +63,7 @@
                         <td>
 
                             <form:input path="firstName" name="firstName" id="firstName" />
+                             <form:errors path="firstName" class="control-label" />
 
                         </td>
 
@@ -77,6 +80,7 @@
                         <td>
 
                             <form:input path="lastName" name="lastName" id="lastName" />
+                             <form:errors path="lastName" class="control-label" />
 
                         </td>
 
@@ -93,6 +97,7 @@
                         <td>
 
                             <form:input path="email" name="email" id="email" />
+                             <form:errors path="email" class="control-label" />
 
                         </td>
 
