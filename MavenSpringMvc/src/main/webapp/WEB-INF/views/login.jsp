@@ -1,5 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <%@ page isELIgnored="false" %>
@@ -9,7 +10,7 @@
         <html>
 
         <head>
-
+			<link href="${pageContext.request.contextPath}/resources/css/main.css" rel="stylesheet" >
             <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
             <title>Login</title>
@@ -22,7 +23,7 @@
 
                 <table align="center">
                 	<c:if test="${not empty invalidUserMessage}">
-                	<tr><td colspan="2">
+                	<tr><td colspan="2" class="error-label">
                 	${invalidUserMessage}
                 	</td></tr>
                 	</c:if>
@@ -38,7 +39,7 @@
                         <td>
 
                             <form:input path="userName" name="userName" id="userName" />
-                            <form:errors path="userName" class="control-label" />
+                            <form:errors path="userName" class="error-label" />
 
                         </td>
                         </spring:bind>
@@ -56,7 +57,7 @@
                         <td>
 
                             <form:password path="password" name="password" id="password" />
-                            <form:errors path="password" class="control-label" />
+                            <form:errors path="password" class="error-label" />
 
                         </td>
 
@@ -80,7 +81,7 @@
 
                         <td></td>
 
-                        <td><a href="home.jsp">Home</a>
+                        <td><a href="home">Home</a>
 
                         </td>
 

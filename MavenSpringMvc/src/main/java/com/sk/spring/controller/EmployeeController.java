@@ -2,6 +2,8 @@ package com.sk.spring.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -58,10 +60,11 @@ public class EmployeeController {
 	
 	  @RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
 
-	  public String loginProcess(@ModelAttribute("emp") EmployeeTeo login,BindingResult result,Model model) {
+	  public String loginProcess(HttpServletRequest request,@ModelAttribute("emp") EmployeeTeo login,BindingResult result,Model model) {
 		  		//loginValidator.validate(login, result);
 			    
 		  if(StringUtils.isEmpty(login.getUserName())){
+			  result.rejectValue("userName", "NotEmpty.userForm.userName");
 		  }
 		  if(StringUtils.isEmpty(login.getPassword())){
 			  result.rejectValue("password", "NotEmpty.userForm.password");
@@ -77,6 +80,7 @@ public class EmployeeController {
 			  return "login";
 		  }
 		  model.addAttribute("emp",emp);
+		  request.getSession().setAttribute("LOGGEDIN_USER", emp);
 
 		  return "welcome";
 
@@ -84,7 +88,7 @@ public class EmployeeController {
 	  
 	  @RequestMapping(value = "/registerProcess", method = RequestMethod.POST)
 
-	  public String registerProcess(@ModelAttribute("emp") EmployeeTeo teo,BindingResult result,Model model) {
+	  public String registerProcess(HttpServletRequest request,@ModelAttribute("emp") EmployeeTeo teo,BindingResult result,Model model) {
 		  empValidator.validate(teo, result);
 		//Check validation errors
 		    if (result.hasErrors()) {
@@ -95,9 +99,13 @@ public class EmployeeController {
 		  if(empId > 0){
 			  teo.setEmpid(empId);
 			  model.addAttribute("emp", teo);
+			  request.getSession().setAttribute("LOGGEDIN_USER", teo);
+			  return "welcome";
+		  }else{
+			  return "register";
 		  }
 		  
-		  return "welcome";
+		  
 		  
 	  }
 

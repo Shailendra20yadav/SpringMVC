@@ -1,11 +1,14 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
     <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+    <%@ page isELIgnored="false" %>
 
         <html>
 
         <head>
-
+        	<spring:url value="/resources/css/main.css" var="mainCss" />
+        	<link href="${mainCss}" rel="stylesheet" />
             <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
             <title>Registration</title>
@@ -28,7 +31,7 @@
                         <td>
 
                             <form:input path="userName" name="userName" id="userName" />
-                             <form:errors path="userName" class="control-label" />
+                             <form:errors path="userName" class="error-label" />
 
                         </td>
                         </spring:bind>
@@ -46,7 +49,7 @@
                         <td>
 
                             <form:password path="password" name="password" id="password" />
-                             <form:errors path="password" class="control-label" />
+                             <form:errors path="password" class="error-label" />
 
                         </td>
 
@@ -63,7 +66,7 @@
                         <td>
 
                             <form:input path="firstName" name="firstName" id="firstName" />
-                             <form:errors path="firstName" class="control-label" />
+                             <form:errors path="firstName" class="error-label" />
 
                         </td>
 
@@ -80,7 +83,7 @@
                         <td>
 
                             <form:input path="lastName" name="lastName" id="lastName" />
-                             <form:errors path="lastName" class="control-label" />
+                             <form:errors path="lastName" class="error-label" />
 
                         </td>
 
@@ -97,7 +100,7 @@
                         <td>
 
                             <form:input path="email" name="email" id="email" />
-                             <form:errors path="email" class="control-label" />
+                             <form:errors path="email" class="error-label" />
 
                         </td>
 
