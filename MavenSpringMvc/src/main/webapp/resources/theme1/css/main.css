@@ -1,3 +1,13 @@
 .error-label{
 	background-color: red;
 }
+.sortable-table{
+	border-collapse: collapse;
+}
+.sortable-table th{
+	background-color: #ffff00;
+	border: 1px solid black;
+}
+.sortable-table td{
+	border: 1px solid black;
+}
