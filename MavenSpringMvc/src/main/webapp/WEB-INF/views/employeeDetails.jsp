@@ -29,12 +29,18 @@
 		
 		
 		 
-		<display:table id="txt" class ="sortable-table" pagesize="3" requestURI="/viewAllEmp" name="employees">
+		<display:table id="empTable" class ="sortable-table" pagesize="3" requestURI="/viewAllEmp" name="employees">
 		  <display:column property="empid" title="Employee Id" sortable="true"></display:column>
 		  <display:column property="firstName" title="First Name" sortable="true"></display:column>
 		  <display:column property="lastName" title="last Name" sortable="true"></display:column>
 		  <display:column property="email" title="Email" sortable="true"></display:column>
 		  <display:column property="userName" title="User Name" sortable="true"></display:column>
+		   <display:column title="Edit">
+		        <a href="#" onclick="editData('${empTable.empid}')">Edit</a>
+		    </display:column>
+		    <display:column title="Delete">
+		        <a href="#" onclick="deleteData('${empTable.empid}')">Delete</a>
+		    </display:column>
 		 
 		 </display:table>
 		 

@@ -2,7 +2,10 @@ package com.sk.jpa.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -41,6 +44,10 @@ public class Employee implements Serializable {
 	private String password;
 
 	private String username;
+	
+	//bi-directional many-to-one association to Emprole
+	@OneToMany(mappedBy="employee", cascade = CascadeType.ALL)
+	private List<Emprole> emproles;
 
 	public Employee() {
 	}
@@ -123,6 +130,21 @@ public class Employee implements Serializable {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+	
+	public List<Emprole> getEmproles() {
+		return this.emproles;
+	}
+
+	public void setEmproles(List<Emprole> emproles) {
+		this.emproles = emproles;
+	}
+
+	public Emprole addEmprole(Emprole emprole) {
+		getEmproles().add(emprole);
+		emprole.setEmployee(this);
+
+		return emprole;
 	}
 
 }

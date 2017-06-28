@@ -1,6 +1,9 @@
 package com.sk.spring.controller;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -54,7 +57,11 @@ public class EmployeeController {
 	@RequestMapping("/register")
 	public ModelAndView showRegistrationPage(){
 		ModelAndView mav = new ModelAndView("register");
+		Map<String,String> roles = new LinkedHashMap<String,String>();
+		roles.put("USER", "User");
+		roles.put("ADMIN", "Admin");
 		mav.addObject("emp", new EmployeeTeo());
+		mav.addObject("roles",roles);
 		return mav;
 	}
 	

@@ -10,7 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.sk.jpa.dao.EmployeeDao;
 import com.sk.jpa.entities.Employee;
+import com.sk.jpa.entities.Emprole;
 import com.sk.jpa.repository.EmployeeRepository;
+import com.sk.spring.model.EmpRoleTeo;
 import com.sk.spring.model.EmployeeTeo;
 import com.sk.spring.services.EmployeeService;
 
@@ -64,6 +66,18 @@ public class EmployeeServiceImpl implements EmployeeService {
 		teo.setPassword(empEntity.getPassword());
 		teo.setCreatedon(empEntity.getCreatedon());
 		teo.setLastupdatedon(empEntity.getLastupdatedon());
+		List<Emprole> roles = empEntity.getEmproles();
+		if(roles!=null && roles.size()>0){
+			List<EmpRoleTeo> empRoles = new ArrayList<EmpRoleTeo>(roles.size());
+			for (Emprole emprole : roles) {
+				EmpRoleTeo empRoleTeo = new EmpRoleTeo();
+				empRoleTeo.setEmployeeId(empEntity.getEmployeeId());
+				empRoleTeo.setEmproleId(emprole.getEmproleId());
+				empRoleTeo.setRolename(emprole.getRolename());
+				empRoles.add(empRoleTeo);
+			}
+			teo.setEmproles(empRoles);
+		}
 		return teo;
 	}
 	
@@ -80,6 +94,18 @@ public class EmployeeServiceImpl implements EmployeeService {
 		emp.setGender(teo.getGender());
 		emp.setCreatedon(teo.getCreatedon());
 		emp.setLastupdatedon(teo.getLastupdatedon());
+		List<EmpRoleTeo> roles = teo.getEmproles();
+		if(roles!=null && roles.size()>0){
+			List<Emprole> empRoles = new ArrayList<Emprole>(roles.size());
+			for (EmpRoleTeo empRoleTeo : roles) {
+				Emprole role = new Emprole();
+				role.setEmployee(emp);
+				role.setRolename(empRoleTeo.getRolename());
+				empRoles.add(role);
+				
+			}
+			emp.setEmproles(empRoles);
+		}
 		return emp;
 	}
 	

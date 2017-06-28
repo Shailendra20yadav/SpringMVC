@@ -9,6 +9,7 @@
   <url>http://maven.apache.org</url>
   <properties>
 		<spring.version>4.0.1.RELEASE</spring.version>
+		<spring.security.version>4.0.1.RELEASE</spring.security.version>
 		 <hibernate.version>4.0.1.Final</hibernate.version>
 		 <spring-data-jpa.version>1.8.2.RELEASE</spring-data-jpa.version>
 		 <jstl.version>1.2</jstl.version>
@@ -56,6 +57,25 @@
             <artifactId>spring-data-jpa</artifactId>
             <version>${spring-data-jpa.version}</version>
         </dependency>
+        
+        <!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+
+		<!-- Spring Security JSP Taglib -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
 		<!-- <dependency>
 			<groupId>MavenSpringMvc</groupId>
 			<artifactId>MavenSpringMvc</artifactId>

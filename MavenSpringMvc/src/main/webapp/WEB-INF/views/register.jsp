@@ -105,6 +105,24 @@
                         </td>
 
                     </tr>
+                    <tr>
+
+                        <td>
+
+                            <form:label path="emproles[0].rolename">Role</form:label>
+
+                        </td>
+
+                        <td>
+
+                           <form:select path="emproles[0].rolename">
+   								<%-- <form:option value="NONE" label="--- Select ---"/> --%>
+   								<form:options items="${roles}" />
+							</form:select>
+
+                        </td>
+
+                    </tr>
 
                     <tr>
 

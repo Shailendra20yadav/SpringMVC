@@ -1,6 +1,7 @@
 package com.sk.spring.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class EmployeeTeo {
 	private long empid;
@@ -14,6 +15,14 @@ public class EmployeeTeo {
 	private Date createdon;
 	private String empName;
 	private int gender;
+	private List<EmpRoleTeo> emproles;
+	
+	public List<EmpRoleTeo> getEmproles() {
+		return emproles;
+	}
+	public void setEmproles(List<EmpRoleTeo> emproles) {
+		this.emproles = emproles;
+	}
 	public int getGender() {
 		return gender;
 	}
