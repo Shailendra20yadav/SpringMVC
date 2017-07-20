@@ -1,8 +1,5 @@
 package com.sk.spring.model;
 
-import javax.persistence.*;
-
-
 public class EmpRoleTeo {
 	
 	private long emproleId;

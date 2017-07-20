@@ -14,4 +14,5 @@ public interface EmployeeService {
 	public List<EmployeeTeo> getAllEmployees();
 	public EmployeeTeo validateLogin(EmployeeTeo teo);
 	public long registerEmployee(EmployeeTeo teo);
+	public EmployeeTeo getEmployeeByUsername(String username);
 }

@@ -27,14 +27,15 @@
 		</table>
 		--%>
 		
-		
+		<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" />
 		 
 		<display:table id="empTable" class ="sortable-table" pagesize="3" requestURI="/viewAllEmp" name="employees">
 		  <display:column property="empid" title="Employee Id" sortable="true"></display:column>
 		  <display:column property="firstName" title="First Name" sortable="true"></display:column>
 		  <display:column property="lastName" title="last Name" sortable="true"></display:column>
 		  <display:column property="email" title="Email" sortable="true"></display:column>
-		  <display:column property="userName" title="User Name" sortable="true"></display:column>
+		  <display:column property="username" title="User Name" sortable="true"></display:column>
 		   <display:column title="Edit">
 		        <a href="#" onclick="editData('${empTable.empid}')">Edit</a>
 		    </display:column>

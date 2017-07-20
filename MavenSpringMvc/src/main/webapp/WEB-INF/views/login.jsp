@@ -18,8 +18,17 @@
         </head>
 
         <body>
-
-            <form:form id="loginForm" modelAttribute="emp" action="loginProcess" method="post">
+        <div style="position: relative; top: 15px;">
+			<c:if test="${not empty error}">
+				<div class="error">${error}</div>
+			</c:if>
+			<c:if test="${not empty msg}">
+				<div class="msg">${msg}</div>
+			</c:if>
+		</div>
+			<c:url value="/j_spring_security_check" var="loginUrl" />
+            <%-- <form:form id="loginForm" modelAttribute="emp" action="loginProcess" method="post"> --%>
+            <form:form id="loginForm" modelAttribute="emp" action="${loginUrl}" method="post">
 
                 <table align="center">
                 	<c:if test="${not empty invalidUserMessage}">
@@ -29,17 +38,17 @@
                 	</c:if>
 
                     <tr>
-						<spring:bind path="userName">
+						<spring:bind path="username">
                         <td>
 
-                            <form:label path="userName">Username: </form:label>
+                            <form:label path="username">Username: </form:label>
 
                         </td>
 
                         <td>
 
-                            <form:input path="userName" name="userName" id="userName" />
-                            <form:errors path="userName" class="error-label" />
+                            <form:input path="username"  id="username" />
+                            <form:errors path="username" class="error-label" />
 
                         </td>
                         </spring:bind>
@@ -88,6 +97,8 @@
                     </tr>
 
                 </table>
+                <input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" />
 
             </form:form>
 

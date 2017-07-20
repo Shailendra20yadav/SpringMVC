@@ -9,7 +9,23 @@ public class EmployeeTeo {
 	private String lastName;
 	private String middleName;
 	private String password;
-	private String userName;
+	private String username;
+	public String getUsername() {
+		return username;
+	}
+	public EmployeeTeo() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public EmployeeTeo(String username,String password) {
+		super();
+		this.password = password;
+		this.username = username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	private String email;
 	private Date lastupdatedon;
 	private Date createdon;
@@ -65,12 +81,7 @@ public class EmployeeTeo {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+	
 	public String getEmail() {
 		return email;
 	}

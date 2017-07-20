@@ -46,7 +46,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
     <mvc:resources mapping="/resources/**" location="/resources/theme1/" cache-period="31556926"/>
     
 	<mvc:annotation-driven />
-	<mvc:interceptors>
+	<!-- <mvc:interceptors>
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
@@ -58,5 +58,5 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 			<bean class="com.sk.spring.interceptor.AuthenticationInterceptor"/>
 		</mvc:interceptor>
 	</mvc:interceptors>
-	
+	 -->
 </beans>

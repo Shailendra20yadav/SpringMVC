@@ -14,6 +14,9 @@
     </head>
 
     <body>
+    <div class="logout">
+    <span > <a href="logout">logout</a></span>
+    </div>
 
         <table>
 
@@ -42,6 +45,8 @@
             <tr>
 
                 <td><a href="viewAllEmp">Show All Employees</a>
+                <input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" />
 
                 </td>
 
