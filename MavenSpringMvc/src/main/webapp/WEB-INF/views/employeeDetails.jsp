@@ -12,6 +12,7 @@
 <title>Employee Details page</title>
 </head>
 <body>
+	
 	<center>
 		<h2>Employee Details</h2>
 		 <%-- <table border="1">

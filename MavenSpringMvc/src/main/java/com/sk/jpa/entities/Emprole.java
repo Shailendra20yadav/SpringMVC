@@ -22,6 +22,8 @@ public class Emprole implements Serializable {
 	private long emproleId;
 
 	private String rolename;
+	
+	private String username;
 
 	//bi-directional many-to-one association to Employee
 	@ManyToOne
@@ -46,7 +48,15 @@ public class Emprole implements Serializable {
 	public void setRolename(String rolename) {
 		this.rolename = rolename;
 	}
+	
+	public String getUsername() {
+		return this.username;
+	}
 
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	
 	public Employee getEmployee() {
 		return this.employee;
 	}

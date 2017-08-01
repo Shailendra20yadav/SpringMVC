@@ -10,6 +10,7 @@ public class EmployeeTeo {
 	private String middleName;
 	private String password;
 	private String username;
+	private int enabled;
 	public String getUsername() {
 		return username;
 	}
@@ -87,6 +88,14 @@ public class EmployeeTeo {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public int getEnabled() {
+		return this.enabled;
+	}
+
+	public void setEnabled(int enabled) {
+		this.enabled = enabled;
 	}
 	public Date getLastupdatedon() {
 		return lastupdatedon;

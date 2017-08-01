@@ -82,6 +82,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		teo.setPassword(empEntity.getPassword());
 		teo.setCreatedon(empEntity.getCreatedon());
 		teo.setLastupdatedon(empEntity.getLastupdatedon());
+		teo.setEnabled(empEntity.getEnabled());
 		if(fetchRelation){
 			List<Emprole> roles = empEntity.getEmproles();
 			if(roles!=null && roles.size()>0){
@@ -112,6 +113,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		emp.setGender(teo.getGender());
 		emp.setCreatedon(teo.getCreatedon());
 		emp.setLastupdatedon(teo.getLastupdatedon());
+		emp.setEnabled(teo.getEnabled());
 		List<EmpRoleTeo> roles = teo.getEmproles();
 		if(roles!=null && roles.size()>0){
 			List<Emprole> empRoles = new ArrayList<Emprole>(roles.size());
@@ -119,6 +121,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 				Emprole role = new Emprole();
 				role.setEmployee(emp);
 				role.setRolename(empRoleTeo.getRolename());
+				role.setUsername(emp.getUsername());
 				empRoles.add(role);
 				
 			}

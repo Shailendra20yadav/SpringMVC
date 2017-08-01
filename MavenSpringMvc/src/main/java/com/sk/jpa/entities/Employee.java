@@ -28,6 +28,7 @@ public class Employee implements Serializable {
 	private Date createdon;
 
 	private String email;
+	private int enabled;
 
 	private String firstname;
 
@@ -74,6 +75,14 @@ public class Employee implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public int getEnabled() {
+		return this.enabled;
+	}
+
+	public void setEnabled(int enabled) {
+		this.enabled = enabled;
 	}
 
 	public String getFirstname() {

@@ -14,6 +14,8 @@ public class EmpRoleTeo {
 	}
 
 	private String rolename;
+	
+	private String username;
 
 	//bi-directional many-to-one association to Employee
 	
@@ -35,6 +37,14 @@ public class EmpRoleTeo {
 
 	public void setRolename(String rolename) {
 		this.rolename = rolename;
+	}
+	
+	public String getUsername() {
+		return this.username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
 

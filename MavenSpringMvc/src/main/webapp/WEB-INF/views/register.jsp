@@ -22,16 +22,16 @@
                 <table align="center">
 
                     <tr>
-						<spring:bind path="userName">
+						<spring:bind path="username">
                         <td>
 
-                            <form:label path="userName">Username</form:label>
+                            <form:label path="username">Username</form:label>
                         </td>
 
                         <td>
 
-                            <form:input path="userName" name="userName" id="userName" />
-                             <form:errors path="userName" class="error-label" />
+                            <form:input path="username" name="username" id="username" />
+                             <form:errors path="username" class="error-label" />
 
                         </td>
                         </spring:bind>
@@ -118,6 +118,24 @@
                            <form:select path="emproles[0].rolename">
    								<%-- <form:option value="NONE" label="--- Select ---"/> --%>
    								<form:options items="${roles}" />
+							</form:select>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td>
+
+                            <form:label path="enabled">Status</form:label>
+
+                        </td>
+
+                        <td>
+
+                           <form:select path="enabled">
+   								<%-- <form:option value="NONE" label="--- Select ---"/> --%>
+   								<form:options items="${enableStatus}" />
 							</form:select>
 
                         </td>

@@ -92,9 +92,10 @@ public class EmployeeController {
 		}
 		return model;
 	}
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	@RequestMapping(value = "/logout", method = RequestMethod.POST)
 	public String logout() {
-		return "forward:j_spring_security_logout";
+		System.out.println("controller logout called......");
+		return "forward:perform_logout";
 	}
 	
 	@RequestMapping("/register")
@@ -103,8 +104,12 @@ public class EmployeeController {
 		Map<String,String> roles = new LinkedHashMap<String,String>();
 		roles.put("USER", "User");
 		roles.put("ADMIN", "Admin");
+		Map<String,String> enableStatus = new LinkedHashMap<String,String>();
+		enableStatus.put("1", "Enable");
+		enableStatus.put("0", "Disable");
 		mav.addObject("emp", new EmployeeTeo());
 		mav.addObject("roles",roles);
+		mav.addObject("enableStatus",enableStatus);
 		return mav;
 	}
 	
