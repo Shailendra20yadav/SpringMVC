@@ -47,7 +47,7 @@ public class Employee implements Serializable {
 	private String username;
 	
 	//bi-directional many-to-one association to Emprole
-	@OneToMany(mappedBy="employee", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="employee", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	private List<Emprole> emproles;
 
 	public Employee() {
